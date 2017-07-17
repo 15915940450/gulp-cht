@@ -23,6 +23,12 @@ gulp.task('default', function() {
 
 ## Change Log
 
+#### 1.5.9
+  - stable edition. get in touch: https://www.npmjs.com/~15915940450 .
+
+#### 1.0.0
+  - assign main
+
 #### 0.1.0
   - Initial release
 
