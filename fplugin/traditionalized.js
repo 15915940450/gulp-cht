@@ -6,7 +6,7 @@ var cclibrary=require('./cclibrary');
 var allCHs=cclibrary.allCHs;
 var allCHt=cclibrary.allCHt;
 
-function versionFun(data){
+function dealFileContents(data){
   var strCHt='';
 
   var i,nowCC,numAllI;
@@ -30,8 +30,8 @@ function traditionalized(){
   return through2.obj(function(file,encoding,cb){
 
     if(file.isNull()){
-      console.log('isNull');
-      this.push(file);
+      console.log('isNull: '+file+' .contents:'+file.contents+'do NOT push :'+file.contents.toString());
+      //this.push(file);
       return cb();
     }
 
@@ -41,7 +41,7 @@ function traditionalized(){
       return cb();
     }
 
-    var content=versionFun(file.contents.toString());
+    var content=dealFileContents(file.contents.toString());
     file.contents=new Buffer(content);
 
     this.push(file);
