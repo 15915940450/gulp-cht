@@ -3,7 +3,7 @@ var gulp=require('gulp');
 var traditionalized=require('./fplugin/traditionalized.js');
 
 gulp.task('traditionalized',function(){
-  gulp.src('./index.html')
+  gulp.src('./test/**/*')
       .pipe(traditionalized())
       .pipe(gulp.dest('dist/zh-HK/'));
 });

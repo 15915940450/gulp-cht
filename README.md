@@ -1,5 +1,6 @@
 # gulp-cht
 
+將簡體中文轉換為繁體中文的gulp插件。
 Small gulp plugin to change CHS to CHT.
 
 ## Install
@@ -22,6 +23,9 @@ gulp.task('default', function() {
 
 
 ## Change Log
+
+#### 1.9.0
+  - do NOT push null, such as folder
 
 #### 1.5.9
   - stable edition. get in touch: https://www.npmjs.com/~15915940450 .

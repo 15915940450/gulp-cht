@@ -1,6 +1,6 @@
 {
   "name": "gulp-cht",
-  "version": "1.5.9",
+  "version": "1.9.0",
   "homepage": "https://www.npmjs.com/package/gulp-cht",
   "description": "change Simplified Chinese to Traditional Chinese.",
   "author": {

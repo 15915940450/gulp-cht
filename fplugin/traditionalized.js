@@ -30,7 +30,7 @@ function traditionalized(){
   return through2.obj(function(file,encoding,cb){
 
     if(file.isNull()){
-      console.log('isNull: '+file+' .contents:'+file.contents+'do NOT push :'+file.contents.toString());
+      console.log(file)
       //this.push(file);
       return cb();
     }
