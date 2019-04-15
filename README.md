@@ -30,6 +30,9 @@ gulp.task('default', function() {
 
 ## Change Log
 
+#### 2.0.0
+  - can convert to simple chinese
+  - 
 #### 1.9.0
   - do NOT push null, such as folder
 
