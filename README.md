@@ -19,6 +19,12 @@ gulp.task('default', function() {
       .pipe(cht())
       .pipe(gulp.dest('dist/zh-HK/'))
 });
+
+gulp.task('default', function() {
+  gulp.src('./index.html')
+      .pipe(cht(true))
+      .pipe(gulp.dest('dist/zh-CN/'))
+});
 ```
 
 

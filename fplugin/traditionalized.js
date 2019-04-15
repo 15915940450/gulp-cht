@@ -6,42 +6,56 @@ var cclibrary=require('./cclibrary');
 var allCHs=cclibrary.allCHs;
 var allCHt=cclibrary.allCHt;
 
-function dealFileContents(data){
-  var strCHt='';
+function dealFileContents(data,sim){
+  var strResult='';
 
   var i,nowCC,numAllI;
-  for(i=0;i<data.length;i++){
-    //当前要处理的汉字
+
+  for (i=0; i<data.length; i++){
+    // 当前要处理的汉字
     nowCC=data.charAt(i);
-    //console.log(nowCC);
-    numAllI=allCHs.indexOf(nowCC);
-    //当前要处理的汉字有繁体字
-    if(numAllI!==-1){
-      strCHt+=allCHt.charAt(numAllI);
+    if(!sim){
+      numAllI=allCHs.indexOf(nowCC);
+      // 当前要处理的汉字有繁体字
+      if (numAllI!==-1){
+        strResult+=allCHt.charAt(numAllI);
+      } else {
+        strResult+=nowCC;
+      }
     }else{
-      strCHt+=nowCC;
+      //繁體轉簡體
+      numAllI=allCHt.indexOf(nowCC);
+      if(numAllI!==-1){
+        strResult+=allCHs.charAt(numAllI);
+      }else{
+        strResult+=nowCC;
+      }
     }
   }
 
-  return strCHt;
+  return strResult;
 }
 
-function traditionalized(){
-  return through2.obj(function(file,encoding,cb){
+function traditionalized(sim){
+  sim=sim || false;
 
-    if(file.isNull()){
-      console.log(file)
-      //this.push(file);
+return through2.obj(function(file,encoding,cb){
+
+    if (file.isNull()){
+      console.log(file);
+      // This.push(file);
       return cb();
     }
 
-    if(file.isStream()){
+    if (file.isStream()){
       console.log('isStream');
       this.emit('error');
-      return cb();
+
+return cb();
     }
 
-    var content=dealFileContents(file.contents.toString());
+    var content=dealFileContents(file.contents.toString(),sim);
+
     file.contents=new Buffer(content);
 
     this.push(file);

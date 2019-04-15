@@ -2,9 +2,9 @@ var gulp=require('gulp');
 
 var traditionalized=require('./fplugin/traditionalized.js');
 
-gulp.task('traditionalized',function(){
+gulp.task('traditionalized',function(sim){
   gulp.src('./test/**/*')
-      .pipe(traditionalized())
+      .pipe(traditionalized(sim))
       .pipe(gulp.dest('dist/zh-HK/'));
 });
 
