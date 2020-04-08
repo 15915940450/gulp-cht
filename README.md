@@ -1,7 +1,8 @@
 # gulp-cht
 
-將簡體中文轉換為繁體中文的gulp插件。<br />
-Small gulp plugin to change CHS to CHT.
+將簡體中文轉換為繁體中文的gulp插件(Small gulp plugin to change CHS to CHT)。<br />
+亦可将繁体中文转换为简体中文（入参为true）。<br />
+
 
 ## Install
 
@@ -30,9 +31,12 @@ gulp.task('default', function() {
 
 ## Change Log
 
+#### 2.0.20
+  - allCHt expands from 4790 to 2553 characters(万).
+
 #### 2.0.0
   - can convert to simple chinese
-  - 
+
 #### 1.9.0
   - do NOT push null, such as folder
 
