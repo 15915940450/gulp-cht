@@ -4,6 +4,7 @@
 亦可将繁体中文转换为简体中文（入参为true）。<br />
 
 
+
 ## Install
 
 ```shell
@@ -28,6 +29,21 @@ gulp.task('default', function() {
 });
 ```
 
+## .npmrc
+```
+registry=https://registry.npmjs.org/
+```
+
+官方源：https://registry.npmjs.org/ <br />
+淘宝镜像源：http://registry.npm.taobao.org/ <br />
+
+```
+> npm login
+Username:15915940450
+Password:
+Email:15915940450@139.com
+> npm publish
+```
 
 ## Change Log
 
